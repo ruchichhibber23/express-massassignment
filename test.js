@@ -6,7 +6,17 @@ var mongojs = require('mongojs');
 var mongoose = require('mongoose');
 var massAssign = require('mongoose-mass-assign');
 
-app.disable('x-powered-by');
+//app.disable('x-powered-by');
+// support json encoded bodies
+app.use(bodyParser.json());
+// support encoded bodies
+app.use(bodyParser.urlencoded({extended: true}));
+
+// Register templating engine
+app.engine('html', require('ejs').renderFile);
+app.set("view engine", "html");
+app.set("views", __dirname + "/static/views");
+app.use(express.static(__dirname + '/static'));
 
 var UserSchema = new mongoose.Schema({
   name: String,
