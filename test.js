@@ -22,7 +22,7 @@ var UserSchema = new mongoose.Schema({
 UserSchema.plugin(massAssign);
 var User = mongoose.model('User', UserSchema, 'contactlist');
 
-app.post('/', function(req, res) {
+app.post('/contactlist_positive_mongoose', function(req, res) {
   console.log("Insert " + req.body);
   var user = new User;
   user.massAssign({
