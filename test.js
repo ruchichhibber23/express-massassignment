@@ -6,7 +6,7 @@ var mongojs = require('mongojs');
 var mongoose = require('mongoose');
 var massAssign = require('mongoose-mass-assign');
 
-//app.disable('x-powered-by');
+app.disable('x-powered-by');
 // support json encoded bodies
 app.use(bodyParser.json());
 // support encoded bodies
