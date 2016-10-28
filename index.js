@@ -16,8 +16,6 @@ app.set("view engine", "html");
 app.set("views", __dirname + "/static/views");
 app.use(express.static(__dirname + '/static'));
 
-
-
 // ======= for MongoDB mass assignment test =======
 //require('./massassignment/test.insert-one-param')(app);
 //require('./massassignment/test.insert-two-params')(app);
